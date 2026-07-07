@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation Required</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #0D47FF, #0056D2); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .container { background: white; border-radius: 15px; padding: 3rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); max-width: 600px; text-align: center; }
+        h1 { color: #0D47FF; margin-bottom: 1rem; }
+        p { color: #666; line-height: 1.8; margin-bottom: 1.5rem; }
+        .code-block { background: #f5f5f5; border-left: 4px solid #0D47FF; padding: 1rem; margin: 1.5rem 0; text-align: left; border-radius: 5px; font-family: monospace; }
+        .button { display: inline-block; background: #0D47FF; color: white; padding: 0.75rem 2rem; border-radius: 5px; text-decoration: none; transition: all 0.3s; margin-top: 1rem; }
+        .button:hover { background: #0056D2; transform: translateY(-2px); }
+        .steps { margin: 2rem 0; text-align: left; }
+        .steps li { margin: 0.75rem 0; color: #333; }
+        .success { color: #28a745; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Installation Required</h1>
+        <p>Welcome to <strong>Morning Star Printing Press Co.</strong> Corporate Website</p>
+
+        <p>To get started, please follow the quick setup guide:</p>
+
+        <div class="steps">
+            <h3 style="color: #0D47FF; margin-bottom: 1rem;">Quick Start (5 Minutes):</h3>
+            <ol>
+                <li><strong>Open Command Prompt</strong> in this directory</li>
+                <li><strong>Run:</strong> <code>composer install</code></li>
+                <li><strong>Run:</strong> <code>copy .env.example .env</code></li>
+                <li><strong>Run:</strong> <code>php artisan key:generate</code></li>
+                <li><strong>Create MySQL database:</strong> <code>morning_star_printing</code></li>
+                <li><strong>Run:</strong> <code>php artisan migrate --seed</code></li>
+                <li><strong>Run:</strong> <code>php artisan storage:link</code></li>
+                <li><strong>Run:</strong> <code>php artisan serve</code></li>
+                <li><strong>Visit:</strong> http://localhost:8000</li>
+            </ol>
+        </div>
+
+        <div class="code-block">
+            cd c:\xampp\htdocs\Website<br>
+            composer install<br>
+            copy .env.example .env<br>
+            php artisan key:generate
+        </div>
+
+        <p style="margin-top: 2rem;">See <strong>SETUP.md</strong> for detailed installation instructions</p>
+
+        <p class="success">✓ Once installed, this page will disappear</p>
+    </div>
+</body>
+</html>
