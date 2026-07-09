@@ -30,45 +30,44 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #0D47FF;
+            --accent: #0056D2;
+            --surface: #FFFFFF;
+            --background: #F8F9FA;
+            --text: #333333;
+            --muted: #6C757D;
+            --border: #E5E7EB;
+        }
+
         body {
             font-family: 'Open Sans', sans-serif;
-            color: #333333;
-            background-color: #F8F9FA;
-            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.7;
+            font-size: 16px;
         }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
-        :root {
-            --primary: #0D47FF;
-            --secondary: #FFFFFF;
-            --background: #F8F9FA;
-            --text: #333333;
-            --accent: #0056D2;
+        img {
+            max-width: 100%;
+            display: block;
         }
 
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 10px;
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
-        ::-webkit-scrollbar-track {
-            background: #F8F9FA;
+        .container {
+            max-width: 1140px;
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent);
-        }
-
-        /* Navigation Bar */
         .navbar {
             background-color: transparent;
             padding: 1rem 0;
@@ -80,36 +79,100 @@
 
         .navbar.scrolled {
             background-color: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
             padding: 0.5rem 0;
         }
 
         .navbar-brand img {
-            height: 50px;
+            height: 72px;
             transition: height 0.3s ease;
         }
 
         .navbar.scrolled .navbar-brand img {
-            height: 40px;
+            height: 58px;
+        }
+
+        .footer-logo {
+            height: 120px;
+            width: auto;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-card {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.4rem;
+            border-radius: 22px;
+            border: 1px solid rgba(13, 71, 255, 0.12);
+            background: white;
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        .contact-info-card .icon-box {
+            min-width: 56px;
+            height: 56px;
+            border-radius: 18px;
+            display: grid;
+            place-items: center;
+            background: rgba(13, 71, 255, 0.12);
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+
+        .contact-info-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info-card p,
+        .contact-info-card a {
+            margin-bottom: 0;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .contact-info-card a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .contact-actions {
+            display: flex;
+            gap: 0.85rem;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-top: 1.5rem;
+        }
+
+        .contact-actions .btn-primary-custom {
+            min-width: 48px;
+            height: 48px;
+            padding: 0 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
         }
 
         .nav-link {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            color: #333333 !important;
+            color: var(--text) !important;
             margin: 0 0.5rem;
             transition: color 0.3s ease;
         }
 
-        .nav-link:hover {
-            color: var(--primary) !important;
-        }
-
+        .nav-link:hover,
         .nav-link.active {
             color: var(--primary) !important;
         }
 
-        /* Hero Section */
         .hero-section {
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: white;
@@ -121,26 +184,31 @@
             overflow: hidden;
         }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
+        .hero-section.hero-section--inner {
+            padding: 70px 0;
+            min-height: 340px;
         }
 
+        .hero-section::before,
         .hero-section::after {
             content: '';
             position: absolute;
-            bottom: -20%;
-            left: -5%;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .hero-section::before {
+            top: 10%;
+            right: -5%;
+            width: 320px;
+            height: 320px;
+        }
+
+        .hero-section::after {
+            bottom: -15%;
+            left: -5%;
+            width: 280px;
+            height: 280px;
         }
 
         .hero-content {
@@ -150,15 +218,19 @@
 
         .hero-title {
             font-size: 3.5rem;
-            font-weight: 800;
+            line-height: 1.05;
             margin-bottom: 1.5rem;
-            line-height: 1.2;
+        }
+
+        .hero-title.hero-title--small {
+            font-size: 2.8rem;
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            max-width: 680px;
             margin-bottom: 2rem;
-            opacity: 0.95;
+            opacity: 0.92;
         }
 
         .hero-buttons {
@@ -167,47 +239,22 @@
             flex-wrap: wrap;
         }
 
-        /* Buttons */
-        .btn-primary-custom {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-family: 'Poppins', sans-serif;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
+        .hero-image-box {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            padding: 1rem;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
         }
 
-        .btn-primary-custom:hover {
-            background-color: var(--accent);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(13, 71, 255, 0.3);
-            color: white;
+        .service-image,
+        .detail-image,
+        .hero-image-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 18px;
+            object-fit: cover;
         }
 
-        .btn-secondary-custom {
-            background-color: white;
-            color: var(--primary);
-            border: 2px solid white;
-            padding: 10px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-family: 'Poppins', sans-serif;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-secondary-custom:hover {
-            background-color: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* Section Spacing */
         .section-padding {
             padding: 80px 0;
         }
@@ -218,76 +265,153 @@
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
-            color: #333333;
-            margin-bottom: 0.5rem;
+            font-size: 2.4rem;
+            color: var(--text);
+            margin-bottom: 0.75rem;
         }
 
         .section-title p {
-            font-size: 1.1rem;
-            color: #666666;
+            font-size: 1.05rem;
+            color: var(--muted);
+            max-width: 680px;
+            margin: 0 auto;
         }
 
-        /* Service Cards */
+        .section-heading {
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-description {
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .bg-surface {
+            background: linear-gradient(135deg, #F8F9FA 0%, #EBEFF4 100%);
+        }
+
+        .bg-primary-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .content-card,
+        .sidebar-card,
+        .contact-card,
+        .map-card,
+        .cta-card,
+        .info-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+        }
+
+        .content-card--accent {
+            border-left: 5px solid var(--primary);
+        }
+
+        .content-card--compact {
+            padding: 1.5rem;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+        }
+
+        .info-card--tall {
+            min-height: 400px;
+        }
+
+        .info-card--short {
+            min-height: 320px;
+        }
+
+        .service-icon-box {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-heading--accent {
+            color: var(--primary);
+        }
+
+        .info-card h3,
+        .info-card p,
+        .info-card strong {
+            color: white;
+        }
+
+        .info-card i,
+        .feature-icon,
+        .service-card i,
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
         .service-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             padding: 2rem;
             text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 18px 35px rgba(15, 23, 42, 0.08);
             height: 100%;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(13, 71, 255, 0.2);
-        }
-
-        .service-card i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+            box-shadow: 0 25px 55px rgba(13, 71, 255, 0.18);
         }
 
         .service-card h3 {
-            color: #333333;
+            color: var(--text);
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
         }
 
         .service-card p {
-            color: #666666;
-            margin-bottom: 1rem;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+            min-height: 72px;
         }
 
-        /* Feature Cards */
+        .service-card .btn-primary-custom {
+            margin-top: auto;
+        }
+
         .feature-card {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 24px;
             color: white;
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
+            padding: 2.2rem;
             position: relative;
             overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
         }
 
         .feature-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 150px;
-            height: 150px;
-            background: rgba(255, 255, 255, 0.1);
+            top: -40%;
+            right: -30%;
+            width: 180px;
+            height: 180px;
+            background: rgba(255, 255, 255, 0.12);
             border-radius: 50%;
         }
 
         .feature-card h3 {
             font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             position: relative;
             z-index: 1;
         }
@@ -298,154 +422,147 @@
             opacity: 0.95;
         }
 
-        /* Counters */
         .counter {
             text-align: center;
             padding: 2rem;
         }
 
         .counter-number {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 800;
             color: var(--primary);
             font-family: 'Poppins', sans-serif;
         }
 
         .counter-label {
-            color: #666666;
-            font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1a1a1a;
             color: white;
-            padding: 3rem 0 1rem;
-            margin-top: 5rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
         }
 
-        footer h5 {
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        footer a {
-            color: #b0b0b0;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: var(--primary);
-        }
-
-        footer .footer-logo {
-            height: 50px;
-            margin-bottom: 1rem;
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background-color: var(--primary);
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 998;
-            box-shadow: 0 5px 15px rgba(13, 71, 255, 0.3);
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background-color: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        /* Loading Screen */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            opacity: 1;
-            visibility: visible;
-            transition: all 0.5s ease;
-        }
-
-        .loading-screen.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .spinner {
+        .cta-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 28px;
+            box-shadow: 0 22px 50px rgba(15, 23, 42, 0.12);
             text-align: center;
-            color: white;
         }
 
-        .spinner i {
-            font-size: 3rem;
-            animation: spin 2s linear infinite;
+        .cta-card h2 {
+            margin-bottom: 1rem;
+            color: var(--text);
         }
 
-        .spinner-text {
-            margin-top: 1rem;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
+        .cta-card p {
+            color: var(--muted);
+            line-height: 1.8;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        /* Alerts */
-        .alert-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+        .sidebar-card li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eef2f6;
         }
 
-        .alert-error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+        .sidebar-card li:last-child {
+            border-bottom: none;
         }
 
-        /* Form Styles */
+        .sidebar-card strong {
+            display: block;
+            color: var(--text);
+            margin-bottom: 0.35rem;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-actions {
+            display: flex;
+            gap: 0.85rem;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-top: 1.5rem;
+        }
+
+        .contact-actions .btn-primary-custom {
+            min-width: 48px;
+            height: 48px;
+            padding: 0 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+        }
+
+        .map-card {
+            overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        .map-card iframe {
+            width: 100%;
+            min-height: 420px;
+            border: none;
+        }
+
+        .btn-primary-custom,
+        .btn-secondary-custom {
+            white-space: nowrap;
+        }
+
+        .alert {
+            border-radius: 14px;
+        }
+
         .form-control {
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            padding: 10px 15px;
+            border-radius: 12px;
+            border: 1px solid #d8dce6;
+            padding: 12px 16px;
             font-size: 1rem;
             transition: all 0.3s ease;
         }
 
         .form-control:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 0.2rem rgba(13, 71, 255, 0.25);
+            box-shadow: 0 0 0 0.2rem rgba(13, 71, 255, 0.18);
         }
 
-        /* Responsive */
+        .form-label {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .required-star {
+            color: #d00000;
+        }
+
+        .rounded-lg {
+            border-radius: 20px !important;
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2rem;
@@ -457,11 +574,11 @@
 
             .hero-section {
                 padding: 50px 0;
-                min-height: 400px;
+                min-height: 420px;
             }
 
             .section-title h2 {
-                font-size: 1.8rem;
+                font-size: 1.9rem;
             }
 
             .hero-buttons {
@@ -471,9 +588,12 @@
             .hero-buttons .btn {
                 width: 100%;
             }
+
+            .contact-actions {
+                flex-direction: column;
+            }
         }
 
-        /* Animation Classes */
         .fade-in {
             animation: fadeIn 0.6s ease-in;
         }
@@ -493,14 +613,6 @@
     <?php echo $__env->yieldContent('styles'); ?>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="spinner">
-            <i class="fas fa-spinner"></i>
-            <div class="spinner-text">Loading...</div>
-        </div>
-    </div>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNavbar">
         <div class="container">
@@ -532,20 +644,6 @@
                             <i class="fas fa-envelope"></i> Contact
                         </a>
                     </li>
-                    <?php if(auth()->guard()->check()): ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo e(route('admin.dashboard')); ?>">
-                                <i class="fas fa-lock"></i> Admin
-                            </a>
-                        </li>
-                    <?php endif; ?>
-                    <?php if(auth()->guard()->guest()): ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo e(route('login')); ?>">
-                                <i class="fas fa-lock"></i> Admin Login
-                            </a>
-                        </li>
-                    <?php endif; ?>
                 </ul>
             </div>
         </div>
@@ -561,65 +659,12 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <img src="<?php echo e(asset('Morningstar.logo.jpg')); ?>" alt="Morning Star Logo" class="footer-logo">
-                    <p>Printing Ideas Into Reality</p>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="<?php echo e(route('home')); ?>">Home</a></li>
-                        <li><a href="<?php echo e(route('about')); ?>">About Us</a></li>
-                        <li><a href="<?php echo e(route('services')); ?>">Services</a></li>
-                        <li><a href="<?php echo e(route('contact')); ?>">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5>Contact Info</h5>
-                    <p>
-                        <i class="fas fa-map-marker-alt"></i> Bolton St., Davao City, Philippines 8000
-                    </p>
-                    <p>
-                        <i class="fas fa-phone"></i> 0917 685 0444<br>
-                        0933 859 8980<br>
-                        (082) 284 9583
-                    </p>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5>Email</h5>
-                    <p>
-                        <a href="mailto:morningstardavao98@gmail.com">morningstardavao98@gmail.com</a><br>
-                        <a href="mailto:morningstarpress2015@gmail.com">morningstarpress2015@gmail.com</a><br>
-                        <a href="mailto:morningstardavao@gmail.com">morningstardavao@gmail.com</a>
-                    </p>
-                </div>
-            </div>
-            <hr style="background-color: rgba(255,255,255,0.2); border: none; height: 1px;">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; 2025 Morning Star Printing Press Co. All Rights Reserved.</p>
-                </div>
-                <div class="col-md-6 text-end">
-                    <a href="https://facebook.com" target="_blank" class="me-3"><i class="fab fa-facebook"></i></a>
-                    <a href="https://twitter.com" target="_blank" class="me-3"><i class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- AOS JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-    <!-- Chart.js (for admin dashboard) -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
 
     <!-- Custom JavaScript -->
     <script>
@@ -628,14 +673,6 @@
             duration: 800,
             offset: 100,
             once: true,
-        });
-
-        // Hide loading screen
-        window.addEventListener('load', function() {
-            const loadingScreen = document.getElementById('loadingScreen');
-            if (loadingScreen) {
-                loadingScreen.classList.add('hidden');
-            }
         });
 
         // Navbar scroll effect

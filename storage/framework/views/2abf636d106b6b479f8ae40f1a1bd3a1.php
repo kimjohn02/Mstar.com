@@ -4,11 +4,11 @@
 
 <?php $__env->startSection('content'); ?>
     <!-- Hero Section -->
-    <section class="hero-section" style="padding: 50px 0; min-height: 300px;">
+    <section class="hero-section hero-section--inner">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12 hero-content text-center">
-                    <h1 class="hero-title" style="font-size: 2.5rem;">Contact Us</h1>
+                    <h1 class="hero-title hero-title--small">Contact Us</h1>
                     <p class="hero-subtitle">Get in touch with us today</p>
                 </div>
             </div>
@@ -21,58 +21,68 @@
             <div class="row">
                 <!-- Contact Info -->
                 <div class="col-lg-4 mb-4" data-aos="fade-right">
-                    <div class="service-card">
-                        <i class="fas fa-map-marker-alt mb-3" style="font-size: 2.5rem; color: var(--primary);"></i>
-                        <h3>Address</h3>
-                        <p>
-                            Bolton St.<br>
-                            Davao City, Philippines 8000
-                        </p>
-                    </div>
-                    
-                    <div class="service-card">
-                        <i class="fas fa-phone mb-3" style="font-size: 2.5rem; color: var(--primary);"></i>
-                        <h3>Phone Numbers</h3>
-                        <p>
-                            <a href="tel:0917-685-0444" style="color: var(--primary); text-decoration: none;">0917 685 0444</a><br>
-                            <a href="tel:0933-859-8980" style="color: var(--primary); text-decoration: none;">0933 859 8980</a><br>
-                            <a href="tel:(082)-284-9583" style="color: var(--primary); text-decoration: none;">(082) 284 9583</a>
-                        </p>
-                    </div>
-                    
-                    <div class="service-card">
-                        <i class="fas fa-envelope mb-3" style="font-size: 2.5rem; color: var(--primary);"></i>
-                        <h3>Email</h3>
-                        <p>
-                            <a href="mailto:morningstardavao98@gmail.com" style="color: var(--primary); text-decoration: none;">morningstardavao98@gmail.com</a><br>
-                            <a href="mailto:morningstarpress2015@gmail.com" style="color: var(--primary); text-decoration: none;">morningstarpress2015@gmail.com</a><br>
-                            <a href="mailto:morningstardavao@gmail.com" style="color: var(--primary); text-decoration: none;">morningstardavao@gmail.com</a>
-                        </p>
+                    <div class="contact-info-grid">
+                        <div class="contact-info-card">
+                            <div class="icon-box">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3>Address</h3>
+                                <p>MORNING STAR PRINTING PRESS<br>132 Bolton St, Davao, Davao Region 8000, Philippines</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="icon-box">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3>Phone Numbers</h3>
+                                <p>
+                                    <a href="tel:0917-685-0444">0917 685 0444</a><br>
+                                    <a href="tel:0933-859-8980">0933 859 8980</a><br>
+                                    <a href="tel:(082)-284-9583">(082) 284 9583</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="icon-box">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3>Email</h3>
+                                <p>
+                                    <a href="mailto:morningstardavao98@gmail.com">morningstardavao98@gmail.com</a><br>
+                                    <a href="mailto:morningstarpress2015@gmail.com">morningstarpress2015@gmail.com</a><br>
+                                    <a href="mailto:morningstardavao@gmail.com">morningstardavao@gmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="icon-box">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3>Business Hours</h3>
+                                <p>
+                                    Monday - Friday<br>9:00 AM - 6:00 PM<br><br>
+                                    Saturday<br>9:00 AM - 2:00 PM<br><br>
+                                    Sunday<br>Closed
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="service-card">
-                        <i class="fas fa-clock mb-3" style="font-size: 2.5rem; color: var(--primary);"></i>
-                        <h3>Business Hours</h3>
-                        <p>
-                            Monday - Friday<br>
-                            9:00 AM - 6:00 PM<br>
-                            <br>
-                            Saturday<br>
-                            9:00 AM - 2:00 PM<br>
-                            <br>
-                            Sunday<br>
-                            Closed
-                        </p>
-                    </div>
-
-                    <div style="display: flex; gap: 1rem; justify-content: center;">
-                        <a href="https://facebook.com" target="_blank" class="btn-primary-custom" style="padding: 10px 15px; font-size: 0.9rem;">
+                    <div class="contact-actions">
+                        <a href="https://facebook.com" target="_blank" class="btn-primary-custom">
                             <i class="fab fa-facebook"></i>
                         </a>
-                        <a href="tel:09176850444" class="btn-primary-custom" style="padding: 10px 15px; font-size: 0.9rem;">
+                        <a href="tel:09176850444" class="btn-primary-custom">
                             <i class="fas fa-phone"></i>
                         </a>
-                        <a href="mailto:morningstardavao98@gmail.com" class="btn-primary-custom" style="padding: 10px 15px; font-size: 0.9rem;">
+                        <a href="mailto:morningstardavao98@gmail.com" class="btn-primary-custom">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
@@ -80,8 +90,17 @@
 
                 <!-- Contact Form -->
                 <div class="col-lg-8 mb-4" data-aos="fade-left">
-                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);">
-                        <h2 style="color: #333333; margin-bottom: 2rem;">Send Us a Message</h2>
+                    <div class="content-card">
+                        <div class="d-flex flex-column flex-md-row align-items-start justify-content-between gap-3 mb-4">
+                            <div>
+                                <h2 class="section-heading">Send Us a Message</h2>
+                                <p class="section-description">Fill out the form below and our team will get back to you as soon as possible.</p>
+                            </div>
+                            <div class="text-md-end">
+                                <span class="badge bg-primary text-white py-2 px-3">Fast Response</span>
+                                <span class="badge bg-secondary text-white py-2 px-3">Trusted Service</span>
+                            </div>
+                        </div>
 
                         <?php if($errors->any()): ?>
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -107,7 +126,7 @@
                             <?php echo csrf_field(); ?>
 
                             <div class="mb-3">
-                                <label for="name" class="form-label">Full Name <span style="color: red;">*</span></label>
+                                <label for="name" class="form-label">Full Name <span class="required-star">*</span></label>
                                 <input type="text" class="form-control <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -129,7 +148,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
 
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email Address <span style="color: red;">*</span></label>
+                                <label for="email" class="form-label">Email Address <span class="required-star">*</span></label>
                                 <input type="email" class="form-control <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -151,7 +170,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
 
                             <div class="mb-3">
-                                <label for="phone_number" class="form-label">Phone Number <span style="color: red;">*</span></label>
+                                <label for="phone_number" class="form-label">Phone Number <span class="required-star">*</span></label>
                                 <input type="text" class="form-control <?php $__errorArgs = ['phone_number'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -173,7 +192,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
 
                             <div class="mb-3">
-                                <label for="subject" class="form-label">Subject <span style="color: red;">*</span></label>
+                                <label for="subject" class="form-label">Subject <span class="required-star">*</span></label>
                                 <input type="text" class="form-control <?php $__errorArgs = ['subject'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -195,7 +214,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
 
                             <div class="mb-3">
-                                <label for="message" class="form-label">Message <span style="color: red;">*</span></label>
+                                <label for="message" class="form-label">Message <span class="required-star">*</span></label>
                                 <textarea class="form-control <?php $__errorArgs = ['message'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -227,11 +246,13 @@ unset($__errorArgs, $__bag); ?>
     </section>
 
     <!-- Google Map Section -->
-    <section class="section-padding" style="background: #F8F9FA;">
+    <section class="section-padding bg-surface">
         <div class="container">
-            <h2 style="text-align: center; color: #333333; margin-bottom: 2rem;">Find Us On The Map</h2>
-            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.4644486837636!2d125.59456!3d7.130599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c4174c4c4c4c4d%3A0x4c4c4c4c4c4c4c4c!2sBoston%20St%2C%20Davao%20City!5e0!3m2!1sen!2sph!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade;"></iframe>
+            <div class="section-title">
+                <h2>Find Us On The Map</h2>
+            </div>
+            <div class="map-card">
+                <iframe src="https://www.google.com/maps?q=132+Bolton+St,+Davao,+Davao+Region+8000,+Philippines&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade."></iframe>
             </div>
         </div>
     </section>
