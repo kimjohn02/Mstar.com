@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-lg-6 mb-4" data-aos="fade-left">
                     <h2 class="section-heading">Our Story</h2>
-                    <p class="lead">Founded in 2015, Morning Star Printing Press Co. emerged as a beacon of innovation and quality in the printing industry. Located in the heart of Davao City, Bolton Street, we have been committed to delivering exceptional printing solutions to businesses, schools, organizations, and individuals.</p>
+                    <p class="lead">Founded in 2015, Morning Star Printing Press Co. emerged as a beacon of innovation and quality in the printing industry. Located at 132 Bolton St, Davao, Davao Region 8000, Philippines, we have been committed to delivering exceptional printing solutions to businesses, schools, organizations, and individuals.</p>
                     <p>Our journey began with a simple yet powerful vision: to make professional printing services accessible to everyone while maintaining the highest standards of quality and efficiency.</p>
                     <p>Over the years, we have invested in state-of-the-art printing equipment, skilled professionals, and customer-centric processes to become the preferred printing partner for thousands of satisfied clients.</p>
                 </div>

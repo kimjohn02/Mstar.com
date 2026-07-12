@@ -101,7 +101,6 @@
                                 @endif
                                 <h3>{{ $related->name }}</h3>
                                 <p>{{ Str::limit($related->description, 100) }}</p>
-                                <a href="{{ route('service.show', $related->slug) }}" class="btn-primary-custom">View Details</a>
                             </div>
                         </div>
                     @endforeach

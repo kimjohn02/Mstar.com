@@ -31,9 +31,7 @@
                             <?php endif; ?>
                             <h3 class="mb-3"><?php echo e($service->name); ?></h3>
                             <p class="mb-3"><?php echo e($service->description); ?></p>
-                            <a href="<?php echo e(route('service.show', $service->slug)); ?>" class="btn-primary-custom">
-                                <i class="fas fa-arrow-right"></i> View Details
-                            </a>
+
                         </div>
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>

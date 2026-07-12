@@ -31,9 +31,7 @@
                             @endif
                             <h3 class="mb-3">{{ $service->name }}</h3>
                             <p class="mb-3">{{ $service->description }}</p>
-                            <a href="{{ route('service.show', $service->slug) }}" class="btn-primary-custom">
-                                <i class="fas fa-arrow-right"></i> View Details
-                            </a>
+
                         </div>
                     </div>
                 @empty

@@ -31,21 +31,21 @@
         }
 
         :root {
-            --primary: #0D47FF;
-            --accent: #0056D2;
+            --primary: #0000FE;
+            --accent: #0000CC;
             --surface: #FFFFFF;
-            --background: #F8F9FA;
-            --text: #333333;
-            --muted: #6C757D;
-            --border: #E5E7EB;
+            --background: #F4F6FB;
+            --text: #1A2340;
+            --muted: #4B5563;
+            --border: #E1E5F2;
         }
 
         body {
             font-family: 'Open Sans', sans-serif;
             color: var(--text);
             background-color: var(--background);
-            line-height: 1.7;
-            font-size: 16px;
+            line-height: 1.8;
+            font-size: 16.5px;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -122,15 +122,18 @@
         }
 
         .contact-info-card h3 {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 700;
         }
 
         .contact-info-card p,
         .contact-info-card a {
             margin-bottom: 0;
             color: var(--muted);
-            line-height: 1.7;
+            line-height: 1.8;
+            font-size: 0.97rem;
         }
 
         .contact-info-card a:hover {
@@ -163,9 +166,15 @@
         .nav-link {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            color: var(--text) !important;
+            color: white !important;
             margin: 0 0.5rem;
             transition: color 0.3s ease;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .navbar.scrolled .nav-link {
+            color: var(--text) !important;
+            text-shadow: none;
         }
 
         .nav-link:hover,
@@ -173,20 +182,55 @@
             color: var(--primary) !important;
         }
 
+        .navbar.scrolled .nav-link:hover,
+        .navbar.scrolled .nav-link.active {
+            color: var(--primary) !important;
+        }
+
         .hero-section {
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: white;
-            padding: 100px 0;
-            min-height: 600px;
+            padding: 0;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
         }
 
+        .hero-section--video {
+            position: relative;
+            isolation: isolate;
+            min-height: 100vh;
+        }
+
+        .hero-section--video::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(13, 71, 255, 0.82) 0%, rgba(0, 86, 210, 0.78) 100%);
+            z-index: 0;
+        }
+
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-section--video .container,
+        .hero-section--video .hero-content,
+        .hero-section--video .hero-image-box {
+            position: relative;
+            z-index: 1;
+        }
+
         .hero-section.hero-section--inner {
-            padding: 70px 0;
-            min-height: 340px;
+            padding: 60px 0;
+            min-height: 200px;
         }
 
         .hero-section::before,
@@ -345,7 +389,12 @@
             color: white;
         }
 
-        .info-card i,
+        .info-card i {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
         .feature-icon,
         .service-card i,
         .contact-card i {
@@ -387,11 +436,13 @@
 
         .feature-card {
             border-radius: 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: white;
             padding: 2.2rem;
             position: relative;
             overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 18px 45px rgba(0, 0, 254, 0.15);
         }
 
         .feature-card:hover {
@@ -407,6 +458,11 @@
             height: 180px;
             background: rgba(255, 255, 255, 0.12);
             border-radius: 50%;
+        }
+
+        .feature-card .feature-icon,
+        .bg-primary-gradient .feature-icon {
+            color: white;
         }
 
         .feature-card h3 {
@@ -521,6 +577,43 @@
         .btn-primary-custom,
         .btn-secondary-custom {
             white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 254, 0.2);
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary);
+            color: white !important;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 254, 0.3);
+            color: white !important;
+        }
+
+        .btn-secondary-custom {
+            background-color: transparent;
+            color: var(--primary) !important;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary-custom:hover {
+            background-color: var(--primary);
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 254, 0.3);
         }
 
         .alert {
@@ -553,6 +646,84 @@
             border-radius: 20px !important;
         }
 
+        /* Footer Styles */
+        .site-footer {
+            background-color: var(--text);
+            color: white;
+            padding: 60px 0 20px;
+            font-size: 0.95rem;
+        }
+
+        .site-footer h4 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .site-footer p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-contact i {
+            width: 25px;
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
         @media (max-width: 992px) {
             .hero-title {
                 font-size: 2.8rem;
@@ -560,6 +731,15 @@
 
             .hero-subtitle {
                 font-size: 1.1rem;
+            }
+
+            .navbar-nav {
+                padding: 1rem 0;
+            }
+
+            .navbar-nav .nav-link {
+                padding: 0.6rem 1rem;
+                border-bottom: 1px solid rgba(0,0,254,0.08);
             }
         }
 
@@ -574,25 +754,149 @@
 
             .hero-section {
                 padding: 50px 0;
-                min-height: 420px;
+                min-height: auto;
+            }
+
+            .hero-section.hero-section--inner {
+                min-height: 160px;
+                padding: 40px 0;
             }
 
             .section-title h2 {
-                font-size: 1.9rem;
+                font-size: 1.7rem;
+            }
+
+            .section-heading {
+                font-size: 1.4rem;
+            }
+
+            .section-padding {
+                padding: 50px 0;
             }
 
             .hero-buttons {
                 flex-direction: column;
+                align-items: flex-start;
             }
 
-            .hero-buttons .btn {
+            .hero-buttons .btn,
+            .hero-buttons .btn-primary-custom {
                 width: 100%;
+                text-align: center;
             }
 
+            /* Contact page */
             .contact-actions {
                 flex-direction: column;
+                align-items: stretch;
+            }
+
+            .contact-actions .btn-primary-custom {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .contact-info-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+
+            /* Feature cards on mobile */
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            /* Service cards */
+            .service-card {
+                padding: 1.5rem;
+            }
+
+            /* Map iframe */
+            .map-card iframe {
+                min-height: 280px;
+            }
+
+            /* Footer */
+            footer .row > div {
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+
+            /* Content cards */
+            .content-card,
+            .sidebar-card {
+                padding: 1.25rem;
             }
         }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.6rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.4rem;
+            }
+
+            .section-padding {
+                padding: 35px 0;
+            }
+
+            .navbar-brand img {
+                height: 45px;
+            }
+
+            /* Buttons full width on small phones */
+            .btn-primary-custom,
+            .btn-secondary-custom {
+                font-size: 0.9rem;
+                padding: 10px 18px;
+            }
+
+            /* Feature cards */
+            .feature-card {
+                padding: 1.25rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1rem;
+            }
+
+            /* Info cards icon */
+            .icon-box {
+                width: 50px;
+                height: 50px;
+                font-size: 1.1rem;
+                flex-shrink: 0;
+            }
+
+            /* Map iframe */
+            .map-card iframe {
+                min-height: 220px;
+            }
+
+            /* Contact info cards stack cleanly */
+            .contact-info-card {
+                padding: 1.25rem;
+            }
+
+            .contact-info-card h3 {
+                font-size: 1rem;
+            }
+
+            .contact-info-card p,
+            .contact-info-card a {
+                font-size: 0.88rem;
+            }
+        }
+
+
 
         .fade-in {
             animation: fadeIn 0.6s ease-in;
@@ -625,22 +929,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link @if(request()->routeIs('home')) active @endif" href="{{ route('home') }}">
+                        <a class="nav-link @if(request()->routeIs('home')) active @endif" href="{{ route('home') }}#home">
                             <i class="fas fa-home"></i> Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @if(request()->routeIs('about')) active @endif" href="{{ route('about') }}">
+                        <a class="nav-link @if(request()->routeIs('about')) active @endif" href="{{ route('home') }}#about">
                             <i class="fas fa-info-circle"></i> About Us
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @if(request()->routeIs('services*')) active @endif" href="{{ route('services') }}">
+                        <a class="nav-link @if(request()->routeIs('services*')) active @endif" href="{{ route('home') }}#services">
                             <i class="fas fa-briefcase"></i> Services
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @if(request()->routeIs('contact')) active @endif" href="{{ route('contact') }}">
+                        <a class="nav-link @if(request()->routeIs('contact')) active @endif" href="{{ route('home') }}#contact">
                             <i class="fas fa-envelope"></i> Contact
                         </a>
                     </li>
@@ -653,6 +957,50 @@
     <main>
         @yield('content')
     </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <img src="{{ asset('Morningstar.logo.jpg') }}" alt="Morning Star Logo" class="mb-3" style="height: 60px; border-radius: 8px;">
+                    <p>Delivering high-quality printing solutions for businesses, schools, organizations, and individuals since 2015.</p>
+                    <div class="footer-social">
+                        <a href="https://m.me/morningstarprintingpress" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="{{ request()->routeIs('home') ? '#home' : route('home') }}"><i class="fas fa-chevron-right me-2" style="font-size: 0.8em;"></i>Home</a></li>
+                        <li><a href="{{ request()->routeIs('home') ? '#about' : route('home').'#about' }}"><i class="fas fa-chevron-right me-2" style="font-size: 0.8em;"></i>About Us</a></li>
+                        <li><a href="{{ request()->routeIs('home') ? '#services' : route('home').'#services' }}"><i class="fas fa-chevron-right me-2" style="font-size: 0.8em;"></i>Services</a></li>
+                        <li><a href="{{ request()->routeIs('home') ? '#contact' : route('home').'#contact' }}"><i class="fas fa-chevron-right me-2" style="font-size: 0.8em;"></i>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="{{ request()->routeIs('home') ? '#services' : route('home').'#services' }}"><i class="fas fa-chevron-right me-2" style="font-size: 0.8em;"></i>Tarpaulin Printing</a></li>
+                        <li><a href="{{ request()->routeIs('home') ? '#services' : route('home').'#services' }}"><i class="fas fa-chevron-right me-2" style="font-size: 0.8em;"></i>Business Cards</a></li>
+                        <li><a href="{{ request()->routeIs('home') ? '#services' : route('home').'#services' }}"><i class="fas fa-chevron-right me-2" style="font-size: 0.8em;"></i>Receipts & Invoices</a></li>
+                        <li><a href="{{ request()->routeIs('home') ? '#services' : route('home').'#services' }}"><i class="fas fa-chevron-right me-2" style="font-size: 0.8em;"></i>Stickers & Labels</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 132 Bolton St, Davao, Philippines</li>
+                        <li><a href="tel:09176850444"><i class="fas fa-phone"></i> 0917 685 0444</a></li>
+                        <li><a href="mailto:mstar982007@gmail.com"><i class="fas fa-envelope"></i> mstar982007@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; {{ date('Y') }} Morning Star Printing Press Co. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" title="Go to top">
