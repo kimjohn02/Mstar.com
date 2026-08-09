@@ -45,7 +45,9 @@ unset($__defined_vars, $__key, $__value); ?>
 
 <div class="service-card" <?php if($aos): ?> data-aos="<?php echo e($aos); ?>" <?php endif; ?>
     <?php if($aosDelay): ?> data-aos-delay="<?php echo e($aosDelay); ?>" <?php endif; ?>>
-    <i class="<?php echo e($icon); ?> feature-icon"></i>
+    <div class="icon-circle">
+        <i class="<?php echo e($icon); ?>"></i>
+    </div>
     <h3><?php echo e($title); ?></h3>
     <p><?php echo e($description); ?></p>
     <?php echo e($slot); ?>

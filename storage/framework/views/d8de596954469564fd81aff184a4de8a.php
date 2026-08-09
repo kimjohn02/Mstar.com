@@ -15,19 +15,20 @@
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">
                 <div class="col-lg-9 hero-content" data-aos="fade-up">
-                    <p class="hero-eyebrow" style="font-size:0.95rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-bottom:0.75rem;">
-                        Welcome to
+                    <h1 class="hero-title fw-bold" style="font-size: clamp(3rem, 5vw, 4.5rem); text-shadow: 0 4px 20px rgba(0,0,0,0.9); line-height: 1.15; margin-bottom: 1.5rem;">
+                        <?php echo e(config('site.business_name')); ?>
+
+                    </h1>
+                    <p class="hero-subtitle mx-auto mb-5" style="font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 500; text-shadow: 0 2px 10px rgba(0,0,0,0.8); max-width: 800px; opacity: 0.95;">
+                        Your One-Stop for All Your Printing Needs
                     </p>
-                    <h1 class="hero-title"><?php echo e(config('site.business_name')); ?></h1>
-                    <p class="hero-subtitle mx-auto mb-3" style="font-weight: 500; font-size: 1.6rem; text-shadow: 0 2px 10px rgba(0,0,0,0.7);">
-                        Your <span style="font-weight:700;">One-Stop Shop</span> for All Your Printing Needs!
-                    </p>
-                    <p class="mx-auto text-light mb-4" style="font-size: 1.15rem; max-width: 750px; line-height: 1.6; text-shadow: 0 2px 8px rgba(0,0,0,0.8); opacity: 0.95;">
-                        Delivering high-quality printing services for businesses, organizations, and individuals with precision, reliability, and exceptional customer service.
-                    </p>
-                    <div class="hero-buttons justify-content-center mt-4">
-                        <a href="#services" class="btn-primary-custom">
-                            <i class="fas fa-arrow-right"></i> Explore Services
+                    <div class="hero-buttons d-flex flex-column flex-sm-row align-items-center justify-content-center gap-4 mt-2">
+                        <a href="#contact" class="btn-primary-rect">
+                            Request a Qoutation
+                        </a>
+                        <a href="tel:<?php echo e(str_replace([' ', '(', ')', '-'], '', config('site.phones')[0] ?? '')); ?>" class="btn-phone-link">
+                            <i class="fas fa-phone-alt"></i> <?php echo e(config('site.phones')[0] ?? '+63 938 910 4312'); ?>
+
                         </a>
                     </div>
                 </div>
@@ -39,79 +40,78 @@
     <section class="section-padding bg-surface" id="about">
         <div class="container">
 
-            <?php if (isset($component)) { $__componentOriginal6a0a1523cc2edf33c83fe20a5d1f7f78 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal6a0a1523cc2edf33c83fe20a5d1f7f78 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.section-title','data' => ['title' => 'About Us','subtitle' => 'Delivering Quality Printing Solutions Since 2015']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('section-title'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['title' => 'About Us','subtitle' => 'Delivering Quality Printing Solutions Since 2015']); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginal6a0a1523cc2edf33c83fe20a5d1f7f78)): ?>
-<?php $attributes = $__attributesOriginal6a0a1523cc2edf33c83fe20a5d1f7f78; ?>
-<?php unset($__attributesOriginal6a0a1523cc2edf33c83fe20a5d1f7f78); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginal6a0a1523cc2edf33c83fe20a5d1f7f78)): ?>
-<?php $component = $__componentOriginal6a0a1523cc2edf33c83fe20a5d1f7f78; ?>
-<?php unset($__componentOriginal6a0a1523cc2edf33c83fe20a5d1f7f78); ?>
-<?php endif; ?>
 
-            <style>
-                .about-image-wrapper {
-                    position: relative;
-                    padding-right: 2rem;
-                    padding-bottom: 2rem;
-                }
-                .about-main-img {
-                    width: 100%;
-                    height: 450px;
-                    object-fit: contain;
-                    background: white;
-                    border: 1px solid var(--border);
-                }
-                .experience-badge {
-                    position: absolute;
-                    bottom: 0;
-                    right: 0;
-                    background: white;
-                    padding: 1.5rem 2rem;
-                    border-radius: 1rem;
-                    text-align: center;
-                    border-left: 5px solid var(--primary);
-                }
-                .icon-box-sm {
-                    width: 32px;
-                    height: 32px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background-color: rgba(0, 0, 254, 0.1);
-                }
-            </style>
+            <div class="our-story-section" data-aos="fade-up">
 
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4" data-aos="fade-right">
-                    <div class="about-image-wrapper">
-                        <img src="<?php echo e(asset('Morningstar.logo.jpg')); ?>" alt="About <?php echo e(config('site.business_name')); ?>" class="img-fluid rounded-4 shadow-sm about-main-img">
-                        <div class="experience-badge shadow-lg">
-                            <h2 class="display-6 fw-bold mb-0" style="color: var(--primary);">10+</h2>
-                            <p class="mb-0 fw-semibold text-muted">Years of Excellence</p>
+                
+                <div class="text-center mb-5">
+                    <h2 class="section-heading mt-3 mb-3">Our Story</h2>
+                    <p class="story-intro mx-auto">
+                        From humble beginnings to Davao's trusted printing partner —
+                        the journey of <strong>Morning Star Printing Press Co.</strong>
+                    </p>
+                </div>
+
+                
+                <div class="story-content-card mx-auto mb-5" data-aos="fade-up" data-aos-delay="100">
+                    <div class="story-accent-bar"></div>
+                    <div class="story-text">
+                        <p class="story-first-para">
+                            <strong>Morning Star Printing Press Co.</strong> wasn't always the leading printing provider it is today. Our story began in 2007, not with ink and paper, but with cellular loading stations. We recognized a growing need for convenient mobile top-up solutions and built a strong reputation for reliable service, all with a foundation of faith in the Lord as our greatest provider.
+                        </p>
+                        <p>
+                            However, our entrepreneurial spirit led us to explore new horizons. We saw a demand for printing services but lacked the in-house capabilities at the time. So, we offered printing as an add-on service, partnering with other companies to fulfill those orders.
+                        </p>
+
+                        
+                        <div class="story-inline-quote">
+                            <i class="fas fa-quote-left story-quote-icon"></i>
+                            <p>"Through borrowed money and unwavering faith, we took a pivotal step — and it marked the true beginning of our printing press journey."</p>
+                        </div>
+
+                        <p>
+                            This experience ignited a passion for bringing the entire printing process under our roof. In 2009, with unwavering faith and a commitment to hard work, we took a pivotal step. Through borrowed money from my sister, a loan from a friend, and the trust of five-six moneylenders, we were able to purchase our very first personal computer, photocopier machine, and even a laminator. This marked the beginning of our journey towards becoming a dedicated printing press. It was a testament to the Lord's blessings on our vision and the support of our community.
+                        </p>
+                        <p>
+                            Our commitment to quality and customer satisfaction, fueled by our faith, fueled further growth. In 2012, with the success of our initial investment and continued support, we were finally able to acquire our first-ever tarpaulin printing machine. This marked a significant leap forward, allowing us to offer a wider range of printing services.
+                        </p>
+                        <p>
+                            From those humble beginnings, we strategically acquired additional printing machines, expanding our capabilities and service offerings. This dedication has propelled us to where we stand today: a thriving company with 22 skilled employees operating across 5 branches.
+                        </p>
+                        <p class="mb-0">
+                            Morning Star's journey is a testament to our dedication, innovation, the power of believing in a vision, the unwavering belief that the Lord is our greatest provider, and the importance of community support. We continue to evolve, utilizing cutting-edge technology to deliver exceptional printing solutions for all your needs.
+                        </p>
+                    </div>
+                </div>
+
+                
+                <div class="story-stats row text-center g-3 mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-6 col-md-3">
+                        <div class="stat-box">
+                            <div class="stat-number">2007</div>
+                            <div class="stat-label">Year Founded</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-box">
+                            <div class="stat-number">22+</div>
+                            <div class="stat-label">Skilled Employees</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-box">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Branches</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-box">
+                            <div class="stat-number">18+</div>
+                            <div class="stat-label">Years of Service</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4" data-aos="fade-left">
-                    <h2 class="section-heading mb-4">Our Story</h2>
-                    <p class="lead text-muted mb-4" style="font-size: 1.1rem; line-height: 1.8;">
-                        Founded in 2015, <strong style="color: var(--text);">Morning Star Printing Press Co.</strong> has been providing reliable and high-quality printing services to businesses, organizations, schools, and individual customers. Through years of dedication and continuous improvement, the company has built a strong reputation for delivering professional printing solutions with quality craftsmanship and excellent customer service.
-                    </p>
-                    <p class="text-muted mb-4" style="line-height: 1.7;">
-                        Located at 132 Bolton St., Davao City, Philippines, Morning Star Printing Press Co. offers a wide range of printing services, including commercial printing, large-format printing, customized products, and promotional materials. The company remains committed to meeting customer needs through efficient production, dependable service, and continuous innovation.
-                    </p>
-                </div>
+
             </div>
 
             
@@ -119,14 +119,14 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <?php if (isset($component)) { $__componentOriginale804957ecdb153e8c822de5ed47a4ace = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginale804957ecdb153e8c822de5ed47a4ace = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.service-card','data' => ['icon' => 'fas fa-bullseye','title' => 'Our Mission','description' => 'To deliver high-quality and innovative printing solutions that help businesses, organizations, and individuals achieve their goals through exceptional service, reliable production, and professional craftsmanship.','aosDelay' => '0']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.service-card','data' => ['icon' => 'fas fa-bullseye','title' => 'Our Mission','description' => 'Morning Star Printing Press Co. delivers exceptional printing experiences through a commitment to state-of-the-art technology, unwavering expertise, and unparalleled customer service.','aosDelay' => '0']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('service-card'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['icon' => 'fas fa-bullseye','title' => 'Our Mission','description' => 'To deliver high-quality and innovative printing solutions that help businesses, organizations, and individuals achieve their goals through exceptional service, reliable production, and professional craftsmanship.','aos-delay' => '0']); ?>
+<?php $component->withAttributes(['icon' => 'fas fa-bullseye','title' => 'Our Mission','description' => 'Morning Star Printing Press Co. delivers exceptional printing experiences through a commitment to state-of-the-art technology, unwavering expertise, and unparalleled customer service.','aos-delay' => '0']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginale804957ecdb153e8c822de5ed47a4ace)): ?>
@@ -141,14 +141,14 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <?php if (isset($component)) { $__componentOriginale804957ecdb153e8c822de5ed47a4ace = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginale804957ecdb153e8c822de5ed47a4ace = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.service-card','data' => ['icon' => 'fas fa-eye','title' => 'Our Vision','description' => 'To become one of the most trusted and preferred printing service providers in the Philippines, recognized for excellence, innovation, reliability, and customer satisfaction.','aosDelay' => '100']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.service-card','data' => ['icon' => 'fas fa-eye','title' => 'Our Vision','description' => 'Morning Star Printing Press Co. envisions to be the leading and most trusted provider of high-quality printing solutions, empowering businesses and individuals to bring their ideas to life.','aosDelay' => '100']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('service-card'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['icon' => 'fas fa-eye','title' => 'Our Vision','description' => 'To become one of the most trusted and preferred printing service providers in the Philippines, recognized for excellence, innovation, reliability, and customer satisfaction.','aos-delay' => '100']); ?>
+<?php $component->withAttributes(['icon' => 'fas fa-eye','title' => 'Our Vision','description' => 'Morning Star Printing Press Co. envisions to be the leading and most trusted provider of high-quality printing solutions, empowering businesses and individuals to bring their ideas to life.','aos-delay' => '100']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginale804957ecdb153e8c822de5ed47a4ace)): ?>
@@ -163,15 +163,23 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <?php if (isset($component)) { $__componentOriginale804957ecdb153e8c822de5ed47a4ace = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginale804957ecdb153e8c822de5ed47a4ace = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.service-card','data' => ['icon' => 'fas fa-heart','title' => 'Our Values','description' => 'Guided by quality, integrity, innovation, teamwork, and customer satisfaction, we are committed to delivering exceptional printing solutions, dependable service, and lasting value to every customer.','aosDelay' => '200']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.service-card','data' => ['icon' => 'fas fa-heart','title' => 'Our Values','description' => '','aosDelay' => '200']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('service-card'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['icon' => 'fas fa-heart','title' => 'Our Values','description' => 'Guided by quality, integrity, innovation, teamwork, and customer satisfaction, we are committed to delivering exceptional printing solutions, dependable service, and lasting value to every customer.','aos-delay' => '200']); ?>
-<?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes(['icon' => 'fas fa-heart','title' => 'Our Values','description' => '','aos-delay' => '200']); ?>
+                        <div class="text-center w-100" style="font-size: 0.9rem; line-height: 1.7; color: var(--muted);">
+                            <p class="mb-3" style="font-size: 0.88rem; color: var(--muted);">Guided by our core values, we operate with integrity and purpose.</p>
+                            <p class="mb-1"><strong style="color: var(--text);">Discipline:</strong> Meticulous approach for high-quality output.</p>
+                            <p class="mb-1"><strong style="color: var(--text);">Humility & Honesty:</strong> Transparency and fairness in all dealings.</p>
+                            <p class="mb-1"><strong style="color: var(--text);">Urgency:</strong> We value deadlines and work efficiently.</p>
+                            <p class="mb-1"><strong style="color: var(--text);">Godliness:</strong> A foundation of ethical principles.</p>
+                            <p class="mb-0"><strong style="color: var(--text);">Selfless Service:</strong> Your needs always come first.</p>
+                        </div>
+                     <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginale804957ecdb153e8c822de5ed47a4ace)): ?>
 <?php $attributes = $__attributesOriginale804957ecdb153e8c822de5ed47a4ace; ?>
@@ -190,17 +198,16 @@
     
     <section class="section-padding" id="services">
         <div class="container">
-
             <?php if (isset($component)) { $__componentOriginal6a0a1523cc2edf33c83fe20a5d1f7f78 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal6a0a1523cc2edf33c83fe20a5d1f7f78 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.section-title','data' => ['title' => 'Our Services','subtitle' => 'At '.e(config('site.business_name')).', we provide a wide variety of high-quality printing services for businesses, schools, organizations, and individuals.']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.section-title','data' => ['title' => 'Our Services','subtitle' => 'Explore our comprehensive range of high-quality printing solutions tailored for businesses, schools, and individuals.']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('section-title'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['title' => 'Our Services','subtitle' => 'At '.e(config('site.business_name')).', we provide a wide variety of high-quality printing services for businesses, schools, organizations, and individuals.']); ?>
+<?php $component->withAttributes(['title' => 'Our Services','subtitle' => 'Explore our comprehensive range of high-quality printing solutions tailored for businesses, schools, and individuals.']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal6a0a1523cc2edf33c83fe20a5d1f7f78)): ?>
@@ -213,145 +220,126 @@
 <?php endif; ?>
 
             <style>
-                .service-category-card {
-                    background: white;
-                    border: 1px solid var(--border);
+                .services-slider-container {
+                    width: 100%;
+                    margin: 0 auto;
+                    max-width: 1400px;
+                }
+                
+                @media (min-width: 992px) { /* Desktop */
+                    .services-slider-container {
+                        width: 95%;
+                    }
+                }
+                
+                @media (min-width: 768px) and (max-width: 991px) { /* Tablet */
+                    .services-slider-container {
+                        width: 95%;
+                    }
+                }
+
+                .service-brochure-img {
+                    width: calc(100% - 30px);
+                    margin: 15px auto;
+                    height: auto;
+                    max-height: 85vh;
+                    object-fit: contain;
                     border-radius: 16px;
-                    padding: 1.5rem;
-                    height: 100%;
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-                    transition: all 0.3s ease;
+                    background: white;
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    display: block;
                 }
-                .service-category-card:hover {
-                    box-shadow: 0 8px 25px rgba(0, 0, 254, 0.08);
-                    border-color: rgba(0, 0, 254, 0.2);
-                    transform: translateY(-5px);
+                
+                @media (min-width: 992px) {
+                    .service-brochure-img:hover {
+                        transform: scale(1.02);
+                        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+                    }
                 }
-                .category-header {
-                    display: flex;
-                    align-items: center;
-                    gap: 15px;
-                    margin-bottom: 1.5rem;
-                    padding-bottom: 1rem;
-                    border-bottom: 1px solid rgba(0,0,0,0.05);
+
+                .carousel-indicators {
+                    bottom: -30px;
                 }
-                .category-icon {
-                    width: 48px;
-                    height: 48px;
-                    background: rgba(0, 0, 254, 0.1);
-                    color: var(--primary);
-                    border-radius: 12px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 1.3rem;
+                
+                .carousel-indicators [data-bs-target] {
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background-color: var(--primary);
+                    opacity: 0.3;
+                    border: none;
+                    margin: 0 6px;
+                    transition: opacity 0.3s ease;
                 }
-                .category-title {
-                    font-size: 1.15rem;
-                    margin: 0;
-                    color: var(--text);
+                
+                .carousel-indicators .active {
+                    opacity: 1;
                 }
-                .service-list {
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
+
+                .carousel-control-prev, .carousel-control-next {
+                    width: 8%;
+                    opacity: 0.5;
+                    transition: opacity 0.3s ease;
                 }
-                .service-list li {
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    margin-bottom: 10px;
-                    color: var(--muted);
-                    font-size: 0.95rem;
+                
+                .carousel-control-prev:hover, .carousel-control-next:hover {
+                    opacity: 1;
                 }
-                .service-list li i {
-                    color: var(--primary);
-                    font-size: 0.85rem;
-                    width: 16px;
+                
+                .carousel-control-prev-icon, .carousel-control-next-icon {
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border-radius: 50%;
+                    padding: 24px;
+                    background-size: 40%;
+                }
+                
+                .carousel-inner {
+                    padding-bottom: 40px;
+                }
+                
+                .carousel-item {
+                    transition: transform 0.8s ease-in-out;
                 }
             </style>
 
-            <?php
-                $serviceCategories = [
-                    'Advertising & Large Format' => [
-                        'icon' => 'fas fa-bullhorn',
-                        'items' => [
-                            ['fas fa-image', 'Tarpaulin Printing'],
-                            ['fas fa-square', 'Sintra Board'],
-                            ['fas fa-chalkboard', 'X-Standee'],
-                            ['fas fa-scroll', 'Pull-Up Banner'],
-                            ['fas fa-sign', 'Signages'],
-                        ]
-                    ],
-                    'Corporate & Marketing' => [
-                        'icon' => 'fas fa-briefcase',
-                        'items' => [
-                            ['fas fa-paper-plane', 'Flyer Printing'],
-                            ['fas fa-book-open', 'Brochure Printing'],
-                            ['fas fa-id-card', 'Calling Card Printing'],
-                            ['fas fa-file-image', 'Poster Printing'],
-                            ['fas fa-utensils', 'Menu Printing'],
-                        ]
-                    ],
-                    'Documents & Office' => [
-                        'icon' => 'fas fa-file-alt',
-                        'items' => [
-                            ['fas fa-receipt', 'Receipt Printing'],
-                            ['fas fa-file-invoice-dollar', 'Invoice Printing'],
-                            ['fas fa-copy', 'Photocopy'],
-                            ['fas fa-print', 'Risograph Printing'],
-                            ['fas fa-industry', 'Offset Printing'],
-                        ]
-                    ],
-                    'Stickers & Labels' => [
-                        'icon' => 'fas fa-sticky-note',
-                        'items' => [
-                            ['fas fa-sticky-note', 'Sticker Printing'],
-                            ['fas fa-cut', 'Cut-Out Sticker Printing'],
-                            ['fas fa-tag', 'Product Labels'],
-                        ]
-                    ],
-                    'Personalized & Souvenirs' => [
-                        'icon' => 'fas fa-gift',
-                        'items' => [
-                            ['fas fa-tshirt', 'T-Shirt Printing'],
-                            ['fas fa-fill-drip', 'Sublimation Printing'],
-                            ['fas fa-mug-hot', 'Mug Printing'],
-                            ['fas fa-circle', 'Button Pins'],
-                            ['fas fa-key', 'Keychains'],
-                            ['fas fa-fan', 'Folded Fans'],
-                        ]
-                    ],
-                    'IDs & Accessories' => [
-                        'icon' => 'fas fa-id-badge',
-                        'items' => [
-                            ['fas fa-id-badge', 'PVC ID Cards'],
-                            ['fas fa-user-tag', 'Lanyards'],
-                        ]
-                    ],
-                ];
-            ?>
+            <div class="services-slider-container" data-aos="fade-up" data-aos-duration="800">
+                <div id="servicesBrochureCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                    
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#servicesBrochureCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#servicesBrochureCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#servicesBrochureCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#servicesBrochureCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    </div>
 
-            <div class="row g-4">
-                <?php $delay = 0; ?>
-                <?php $__currentLoopData = $serviceCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categoryName => $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="<?php echo e($delay); ?>">
-                        <div class="service-category-card">
-                            <div class="category-header">
-                                <div class="category-icon">
-                                    <i class="<?php echo e($category['icon']); ?>"></i>
-                                </div>
-                                <h3 class="category-title"><?php echo e($categoryName); ?></h3>
-                            </div>
-                            <ul class="service-list">
-                                <?php $__currentLoopData = $category['items']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as [$icon, $name]): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <li><i class="<?php echo e($icon); ?>"></i> <?php echo e($name); ?></li>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            </ul>
+                    <!-- Inner -->
+                    <div class="carousel-inner text-center">
+                        <div class="carousel-item active">
+                            <img src="<?php echo e(asset('images/Services/Services.jpg')); ?>" class="service-brochure-img" alt="Our Services Brochure 1" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="<?php echo e(asset('images/Services/Services1.jpg')); ?>" class="service-brochure-img" alt="Our Services Brochure 2" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="<?php echo e(asset('images/Services/Services2.jpg')); ?>" class="service-brochure-img" alt="Our Services Brochure 3" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="<?php echo e(asset('images/Services/Services3.jpg')); ?>" class="service-brochure-img" alt="Our Services Brochure 4" loading="lazy" decoding="async">
                         </div>
                     </div>
-                    <?php $delay += 100; ?>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#servicesBrochureCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#servicesBrochureCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
 
         </div>

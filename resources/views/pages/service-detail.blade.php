@@ -21,7 +21,7 @@
                 <div class="col-lg-8 mb-4" data-aos="fade-right">
                     @if($service->image)
                         <div class="hero-image-box mb-4">
-                            <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->name }}" class="img-fluid rounded-lg detail-image">
+                            <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->name }}" class="img-fluid rounded-lg detail-image" loading="lazy" decoding="async">
                         </div>
                     @endif
                     
@@ -97,7 +97,7 @@
                         <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                             <div class="service-card">
                                 @if($related->image)
-                                    <img src="{{ asset('storage/' . $related->image) }}" alt="{{ $related->name }}" class="img-fluid rounded mb-3 service-image">
+                                    <img src="{{ asset('storage/' . $related->image) }}" alt="{{ $related->name }}" class="img-fluid rounded mb-3 service-image" loading="lazy" decoding="async">
                                 @endif
                                 <h3>{{ $related->name }}</h3>
                                 <p>{{ Str::limit($related->description, 100) }}</p>

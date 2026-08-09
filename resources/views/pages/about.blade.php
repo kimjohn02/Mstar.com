@@ -62,7 +62,7 @@
                     <x-service-card
                         icon="fas fa-bullseye"
                         title="Our Mission"
-                        description="To deliver innovative, high-quality printing solutions that empower businesses and individuals to achieve their goals through exceptional service and craftsmanship."
+                        description="Morning Star Printing Press Co. delivers exceptional printing experiences through a commitment to state-of-the-art technology, unwavering expertise, and unparalleled customer service."
                         aos-delay="0"
                     />
                 </div>
@@ -70,7 +70,7 @@
                     <x-service-card
                         icon="fas fa-eye"
                         title="Our Vision"
-                        description="To be the most trusted and innovative printing company in the Philippines, recognized for excellence, reliability, and customer satisfaction."
+                        description="Morning Star Printing Press Co. envisions to be the leading and most trusted provider of high-quality printing solutions, empowering businesses and individuals to bring their ideas to life."
                         aos-delay="100"
                     />
                 </div>
@@ -78,9 +78,18 @@
                     <x-service-card
                         icon="fas fa-heart"
                         title="Our Values"
-                        description="Quality, Innovation, Integrity, Customer-Centricity, Teamwork, and Social Responsibility guide every decision we make."
+                        description=""
                         aos-delay="200"
-                    />
+                    >
+                        <div class="text-start text-muted" style="font-size: 0.82rem; line-height: 1.5; margin-top: -10px;">
+                            <p class="mb-2" style="font-style: italic;">Guided by our core values, we operate with integrity and purpose.</p>
+                            <p class="mb-1"><strong style="color: var(--text);">Discipline:</strong> We are meticulous in our approach, ensuring consistently high-quality output.</p>
+                            <p class="mb-1"><strong style="color: var(--text);">Humility & Honesty:</strong> We conduct business with transparency and fairness.</p>
+                            <p class="mb-1"><strong style="color: var(--text);">Urgency:</strong> We understand the importance of deadlines and work efficiently.</p>
+                            <p class="mb-1"><strong style="color: var(--text);">Godliness:</strong> We operate with a foundation of ethical principles.</p>
+                            <p class="mb-0"><strong style="color: var(--text);">Selfless Service:</strong> We prioritize your needs and go the extra mile.</p>
+                        </div>
+                    </x-service-card>
                 </div>
             </div>
 

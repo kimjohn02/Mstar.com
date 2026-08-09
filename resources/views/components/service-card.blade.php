@@ -11,7 +11,9 @@
 
 <div class="service-card" @if($aos) data-aos="{{ $aos }}" @endif
     @if($aosDelay) data-aos-delay="{{ $aosDelay }}" @endif>
-    <i class="{{ $icon }} feature-icon"></i>
+    <div class="icon-circle">
+        <i class="{{ $icon }}"></i>
+    </div>
     <h3>{{ $title }}</h3>
     <p>{{ $description }}</p>
     {{ $slot }}

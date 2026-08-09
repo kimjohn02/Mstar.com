@@ -7,9 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // ── AOS Animations ──────────────────────────────────────────
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 800,
-            offset: 100,
+            duration: 900,
+            offset: 80,
             once: true,
+            easing: 'ease-out-cubic',
         });
     }
 
@@ -130,11 +131,76 @@ document.addEventListener('DOMContentLoaded', function () {
         counterObserver.observe(countersSection);
     }
 
+    // ── Animate Story Stats (stat-number) ────────────────────────
+    function animateStat(el) {
+        const raw = el.textContent.trim();
+        const num = parseInt(raw.replace(/\D/g, ''));
+        const suffix = raw.replace(/[\d]/g, '');
+        if (isNaN(num)) return;
+        let current = 0;
+        const step = Math.max(1, Math.floor(num / 60));
+        const timer = setInterval(function () {
+            current = Math.min(current + step, num);
+            el.textContent = current.toLocaleString() + suffix;
+            if (current >= num) clearInterval(timer);
+        }, 25);
+    }
+
+    const statSection = document.querySelector('.story-stats');
+    if (statSection) {
+        const statObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.stat-number').forEach(function (el) {
+                        if (!el.dataset.animated) {
+                            el.dataset.animated = '1';
+                            animateStat(el);
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.4 });
+        statObserver.observe(statSection);
+    }
+
     // ── Auto-dismiss Alerts ──────────────────────────────────────
     document.querySelectorAll('.alert').forEach(function (alert) {
         setTimeout(function () {
             alert.style.display = 'none';
         }, 5000);
     });
+
+    // ── Theme Toggle (Light/Dark Mode) ───────────────────────────
+    const themeToggle = document.getElementById('themeToggle');
+    const themeToggleText = document.getElementById('themeToggleText');
+    const themeToggleIcon = themeToggle ? themeToggle.querySelector('i') : null;
+
+    if (themeToggle && themeToggleText && themeToggleIcon) {
+        // Check saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeToggleText.textContent = 'Dark';
+            themeToggleIcon.classList.remove('fa-sun');
+            themeToggleIcon.classList.add('fa-moon');
+        }
+
+        themeToggle.addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            
+            if (isDark) {
+                localStorage.setItem('theme', 'dark');
+                themeToggleText.textContent = 'Dark';
+                themeToggleIcon.classList.remove('fa-sun');
+                themeToggleIcon.classList.add('fa-moon');
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggleText.textContent = 'Light';
+                themeToggleIcon.classList.remove('fa-moon');
+                themeToggleIcon.classList.add('fa-sun');
+            }
+        });
+    }
 
 });

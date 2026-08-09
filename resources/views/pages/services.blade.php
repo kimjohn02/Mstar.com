@@ -23,7 +23,7 @@
                     <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="{{ ($loop->index % 3) * 100 }}">
                         <div class="service-card h-100">
                             @if($service->image)
-                                <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->name }}" class="img-fluid rounded mb-3 service-image">
+                                <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->name }}" class="img-fluid rounded mb-3 service-image" loading="lazy" decoding="async">
                             @elseif($service->icon)
                                 <div class="service-icon-box mb-3">
                                     <i class="fas {{ $service->icon }} feature-icon"></i>
