@@ -51,10 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ── Scroll-Spy: Highlight Active Nav Link ────────────────────
     const navSectionMap = {
-        'home':     document.getElementById('nav-home'),
-        'about':    document.getElementById('nav-about'),
-        'services': document.getElementById('nav-services'),
-        'contact':  document.getElementById('nav-contact'),
+        'home':         document.getElementById('nav-home'),
+        'about':        document.getElementById('nav-about'),
+        'services':     document.getElementById('nav-services'),
+        'testimonials': document.getElementById('nav-testimonials'),
+        'contact':      document.getElementById('nav-contact'),
     };
 
     const sections = document.querySelectorAll('section[id]');

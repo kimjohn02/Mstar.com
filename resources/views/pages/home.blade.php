@@ -288,6 +288,89 @@
         </div>
     </section>
 
+    {{-- ── Testimonials ──────────────────────────────────────────────── --}}
+    <section class="section-padding testimonials-section" id="testimonials">
+        <div class="container">
+
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="testimonials-heading">What Our Clients Say</h2>
+                <p class="testimonials-subtext">Hear What Our Customers Have to Say About Our Quality and Service</p>
+            </div>
+
+            <div class="row g-4">
+
+                {{-- Card 1 --}}
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"I am very satisfied with their service and the quality of their work."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">F</div>
+                            <div>
+                                <div class="testimonial-name">Fenna Hope</div>
+                                <div class="testimonial-source">Facebook page review</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Card 2 --}}
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Very good service! Highly recommended! The graphic artists are very professional."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">J</div>
+                            <div>
+                                <div class="testimonial-name">James Frsh</div>
+                                <div class="testimonial-source">Facebook page review</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Card 3 --}}
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The staff are very accommodating. They truly serve their clients with a heart, and they provide high-quality work."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">I</div>
+                            <div>
+                                <div class="testimonial-name">Isagani Acdog Cañal</div>
+                                <div class="testimonial-source">Facebook page review</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Card 4 --}}
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Accommodating staff, and they provide high-quality printing services."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">L</div>
+                            <div>
+                                <div class="testimonial-name">Lorejo Jhogil</div>
+                                <div class="testimonial-source">Facebook page review</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     {{-- ── Why Choose Us ────────────────────────────────────────────── --}}
     <section class="section-padding bg-surface" id="why-choose-us">
         <div class="container">
@@ -300,12 +383,12 @@
             <div class="row">
                 @php
                     $features = [
-                        ['fas fa-star',   'High-Quality Printing', 'We produce sharp, vibrant, and durable prints using premium materials and advanced printing technology to ensure outstanding results.', '0'],
-                        ['fas fa-cog',    'Modern Equipment',      'Our advanced printing equipment delivers precise, efficient, and consistent results for every project, regardless of size.', '100'],
-                        ['fas fa-tag',    'Affordable Pricing',    'We provide competitive pricing without compromising quality, helping customers get excellent value for every order.', '200'],
-                        ['fas fa-bolt',   'Fast Turnaround',       'Efficient production processes enable us to complete orders on time while maintaining the highest quality standards.', '300'],
-                        ['fas fa-users',  'Professional Team',     'Our experienced and dedicated team works closely with every customer to ensure each project meets their expectations.', '400'],
-                        ['fas fa-smile',  'Excellent Customer Support', 'We are committed to providing friendly, responsive, and reliable customer service from inquiry to order completion.', '500'],
+                        ['fas fa-star',   'Quality Printing', 'We deliver clean, vibrant, and reliable prints using quality materials and careful production processes.', '0'],
+                        ['fas fa-cog',    'Reliable Printing Equipment', 'Our printing equipment helps us produce consistent and precise results for a wide range of printing projects.', '100'],
+                        ['fas fa-tag',    'Competitive Pricing', 'We offer competitive prices while maintaining the quality of our printing services.', '200'],
+                        ['fas fa-bolt',   'Fast Turnaround', 'We work efficiently to complete orders on time while maintaining our quality standards.', '300'],
+                        ['fas fa-users',  'Professional Service', 'Our experienced team works closely with customers to understand their needs and deliver the right printing solutions.', '400'],
+                        ['fas fa-smile',  'Customer-Focused Service', 'We are committed to providing friendly, responsive, and reliable service from inquiry to order completion.', '500'],
                     ];
                 @endphp
 

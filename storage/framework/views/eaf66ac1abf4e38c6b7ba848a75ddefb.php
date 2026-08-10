@@ -21,6 +21,9 @@
                     <a class="nav-link" id="nav-services" href="<?php echo e(route('home')); ?>#services">Services</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" id="nav-testimonials" href="<?php echo e(route('home')); ?>#testimonials">Testimonials</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" id="nav-contact" href="<?php echo e(route('home')); ?>#contact">Contact</a>
                 </li>
                 <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
