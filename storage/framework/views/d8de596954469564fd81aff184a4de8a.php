@@ -23,8 +23,8 @@
                         Your One-Stop for All Your Printing Needs
                     </p>
                     <div class="hero-buttons d-flex flex-column flex-sm-row align-items-center justify-content-center gap-4 mt-2">
-                        <a href="#contact" class="btn-primary-rect">
-                            Request a Qoutation
+                        <a href="<?php echo e(config('site.messenger_url')); ?>" target="_blank" class="btn-primary-rect">
+                            Request a Quotation
                         </a>
                         <a href="tel:<?php echo e(str_replace([' ', '(', ')', '-'], '', config('site.phones')[0] ?? '')); ?>" class="btn-phone-link">
                             <i class="fas fa-phone-alt"></i> <?php echo e(config('site.phones')[0] ?? '+63 938 910 4312'); ?>
